@@ -121,6 +121,9 @@ def main():
 		with col3:
 			image = Image.open("resources/imgs/Mijan.jpg")
 			st.image(image, caption='Mijan', width=300)
+		with col3:
+			image = Image.open("resources/imgs/Ahamd.jpg")
+			st.image(image, caption='Ahmad', width=300)
 		st.balloons()
 	# Building out the predication page
 	if selection == "Prediction":
