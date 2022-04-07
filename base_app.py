@@ -107,7 +107,20 @@ def main():
 	# Building the team page
 	if selection == "Team":
 		st.title("The Team")	
-		st.markdown("Here is the awasome team behinde the project")
+		st.markdown("Here is the Awesome team behind this project")
+		image = Image.open('resources/imgs/profile_pic.png')
+		st.image(image, caption='Team lead Abubakar',  width=300)
+		col1, col2, col3 = st.columns(3)
+		with col1:
+			image = Image.open('resources/imgs/raf.jpg')
+			st.header("Team members")
+			st.image(image, caption= 'Raphael', width=300)
+		with col2:
+			image = Image.open("resources/imgs/Dienebi.jpg")
+			st.image(image, caption='Dienebi', width=300)
+		with col3:
+			image = Image.open("resources/imgs/Mijan.jpg")
+			st.image(image, caption='Mijan', width=300)
 		st.balloons()
 	# Building out the predication page
 	if selection == "Prediction":
@@ -141,13 +154,13 @@ def main():
 			
 			word = ''
 			if prediction == 0:
-				word = '"**Nuetral**". It neither supports nor refutes the belief of man-made climate change'
+				word = '"**Neutral**". It neither supports nor refutes the belief of man-made climate change'
 			elif prediction == 1:
 				word = '"**Pro**". The tweet supports the belief of man-made climate change'
 			elif prediction == 2:
 				word = '**News**. The tweet links to factual news about climate change'
 			else:
-				word = 'The tweet do not believe in man-made climate change'
+				word = 'The tweet do not belief in man-made climate change'
 			# When model has successfully run, will print prediction
 			# You can use a dictionary or similar structure to make this output
 			# more human interpretable.
