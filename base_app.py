@@ -78,12 +78,12 @@ def main():
 		image = Image.open('resources/imgs/eda.gif')
 		st.image(image, caption='Data Exploration')
 		# You can read a markdown file from supporting resources folder
-		st.markdown("In this page we will walk you through the exploratory Data Analysis done for the tweeter dataset")
+		st.markdown("In this page we will walk you through the exploratory Data Analysis done for the twitter dataset")
 		st.text("Here is the first few rows")
 		st.dataframe(raw.head())
 		st.markdown("After taking a look at the frist five  rows of the DataFrame we notice that we have `Three(3)` columns in the dataFrame. we have two features and one label,  **features** inludes: - `message` - `tweetid`,  **label**: - `sentiment` And the test dataFrame contains only the features")
 		# taking a closer look at the tweets
-		st.markdown("Taking a closer look at the `message` column, it appears they alot of emojis and other unwanted symbols")
+		st.markdown("Taking a closer look at the `message` column, it appears there a lot of emojis and other unwanted symbols")
 		st.write(raw['message'][3195])
 		# taking a look at the labels
 		image = Image.open('resources/imgs/word_cloud.png')
@@ -102,11 +102,11 @@ def main():
 			sns.countplot(x = "sentiment", data = raw)
 			st.pyplot(fig)
 		countplot()
-		st.markdown("The labels appears to be Umbalanced")
+		st.markdown("The labels appear to be Umbalanced")
 
 	# Building the team page
-	if selection == "Team":
-		st.title("The Team")	
+	if selection == "About":
+		st.title("The Logistic Eight Team")	
 		st.markdown("Here is the Awesome team behind this project")
 		image = Image.open('resources/imgs/profile_pic.png')
 		st.image(image, caption='Team lead Abubakar',  width=300)
@@ -128,12 +128,12 @@ def main():
 	# Building out the predication page
 	if selection == "Prediction":
 		st.title("This is a Tweet Classifer")
-		st.subheader("tweet classification")
+		st.subheader("Tweet classification")
 		image = Image.open('resources/imgs/climate_pic.jpg')
 		st.image(image, caption='Climate Change')
 		st.info("Predicting tweets using ML Models")
 		option = st.selectbox(
-                    'Select the model of your choose from the drop down',
+                    'Select the model from the Dropdown',
                     ('Logistic Regression', 'SVC', 'RandomForest'))
 		st.write('You selected:', option)
 		# Creating a text box for user input
